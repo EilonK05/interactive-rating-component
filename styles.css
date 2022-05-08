@@ -10,6 +10,7 @@
     --clr-white: hsl(0, 0%, 100%);
     --clr-light-grey: hsl(217, 12%, 63%);
     --clr-medium-grey: hsl(216, 12%, 54%);
+    --clr-dark-grey: hsl(213, 8%, 21%);
     --clr-dark-blue: hsl(213, 19%, 18%);
     --clr-very-dark-blue: hsl(216, 12%, 8%);
 }
@@ -24,13 +25,18 @@ body{
 }
 
 .hidden{
-    display: none;
+    display: none !important;
+}
+
+.selected {
+    background-color: var(--clr-medium-grey) !important;
+    color: white !important;
 }
 
 .card {
     background-color: var(--clr-dark-blue);
-    max-width: 23rem;
-    max-height: 35rem;
+    width: 23rem;
+    height: 23rem;
     border-radius: 1rem;
 }
 
@@ -39,7 +45,7 @@ body{
 }
 
 .star-icon{
-    background-color: var(--clr-very-dark-blue);
+    background-color: var(--clr-dark-grey);
     border-radius: 50%;
     width: fit-content;
     aspect-ratio: 1/1;
@@ -69,7 +75,7 @@ h1{
 }
 
 .number{
-    background-color: var(--clr-very-dark-blue);
+    background-color: var(--clr-dark-grey);
     color: var(--clr-light-grey);
     width: 2.5rem;
     height: 2.5rem;
@@ -77,6 +83,13 @@ h1{
     padding: .5rem;
     text-align: center;
     line-height: 1.5rem;
+    cursor: pointer;
+    transition: background-color 300ms ease, color 300ms ease;
+}
+
+.number:hover {
+    background-color: var(--clr-orange);
+    color: var(--clr-white);
 }
 
 button{
@@ -90,4 +103,36 @@ button{
     font-size: 1em;
     font-weight: 400;
     letter-spacing: .1rem;
+    cursor: pointer;
+    transition: background-color 500ms ease, color 500ms ease;
+}
+
+button:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-orange);
+}
+
+.after-submit-component{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.rating-amount {
+    color: var(--clr-orange);
+    background-color: var(--clr-dark-grey);
+    width: 13rem;
+    height: 2rem;
+    border-radius: 5rem;
+    text-align: center;
+    line-height: 2.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.thanks-text {
+    color: var(--clr-light-grey);
+    text-align: center;
 }
